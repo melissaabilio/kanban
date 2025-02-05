@@ -23,7 +23,7 @@ de criar e excluir colunas e tarefas.
 
 1- Clone o repositório
    Baixe os arquivos do projeto:
-   
+   https://github.com/melissaabilio/valinor-teste/tree/melissa
 
 2- Instale as dependências
    Antes de rodar, instale os pacotes necessários:
