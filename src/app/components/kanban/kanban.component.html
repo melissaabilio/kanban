@@ -1,28 +1,20 @@
-<div class="linha">
-  <div class="coluna">
-    <h3>Para fazer</h3>
-    <div class="card">Tarefa 1</div>
-        <div class="card">Tarefa 2</div>
-        </div>
+<div class="board">
+  <button class="add-column-btn" (click)="addColumn()">+ Adicionar Coluna</button>
 
-        <div class="coluna">
-            <h3>Em Andamento</h3>
-            <div class="card">Tarefa 3</div>
-        </div>
-
-        <div class="coluna">
-            <h3>Concluído</h3>
-            <div class="card">Tarefa 4</div>
-        </div>
+  <div class="coluna" *ngFor="let column of columns; let columnIndex = index">
+    <div class="coluna-header">
+      <h3>{{ column.name }}</h3>
+      <button class="delete-column-btn" (click)="deleteColumn(columnIndex)">❌</button>
     </div>
 
-    <div class="board">
-        <div class="column" *ngFor="let column of columns">
-          <h3>{{ column.name }}</h3>
-          <div cdkDropList [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event)">
-            <div *ngFor="let task of column.tasks" cdkDrag class="kanban-card">
-              {{ task.title }}
-            </div>
-          </div>
-        </div>
+    <button class="add-task-btn" (click)="addTask(columnIndex)">+ Adicionar Tarefa</button>
+
+    <div cdkDropList [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event)"
+      [cdkDropListConnectedTo]="connectedLists" class="drop-zone">
+      <div *ngFor="let task of column.tasks; let taskIndex = index" cdkDrag class="card">
+        {{ task.title }}
+        <button (click)="deleteTask(columnIndex, taskIndex)" class="delete-btn">🗑️</button>
+      </div>
     </div>
+  </div>
+</div>

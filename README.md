@@ -1,59 +1,65 @@
-# KanbanField
+**Kaban Angular - Drag & Drop e Gerenciamento de Tarefas*
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+Bem vindo! Esse é um projeto simples, para organizar tarefas de modo visual e intuitiva.
+Criado com Angular e utilizando CDK Drag & Drop, ele permite arrastar e soltar tarefas, além
+de criar e excluir colunas e tarefas. 
 
-## Development server
+**O que você pode fazer?**
 
-To start a local development server, run:
+-> Arrastar e soltar tarefas entre colunas
+-> Criar novas tarefas
+-> Excluir tarefas que não são mais necessárias
+-> Criar novas colunas
+-> Remover colunas
 
-```bash
-ng serve
-```
+**O que foi usado nesse projeto?**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* Angular
+* Angular CDK Drag & Drop
+* Typescript
+* HTML5 + CSS3
 
-## Code scaffolding
+**Como instalar e rodar o projeto**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1- Clone o repositório
+   Baixe os arquivos do projeto:
+   https://github.com/melissaabilio/kanban.git
+   cd kanban-angular
 
-```bash
-ng generate component component-name
-```
+2- Instale as dependências
+   Antes de rodar, instale os pacotes necessários:
+   npm install
+   Se você não tiver o Angular CDK, instale com:
+   npm install @angular/cdk
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3- Rode o projeto
+   Agora é só inciar o servidor Angular:
+   ng serve
 
-```bash
-ng generate --help
-```
+Acesse no navegador:
+http://localhost:4200
 
-## Building
+**Como usar o Kanban?**
 
-To build the project run:
+1- Adicione uma nova tarefa -> Clique no botão "+ Adicionar Tarefa" dentro da coluna desejada.
+2- Arraste e solte tarefas -> Clique e arraste uma tarefa para movê-la entre colunas.
+3- Remova uma tarefa -> Clique no ícone de lixeira (🗑️) dentro do card para excluir.
+4- Crie uma nova coluna -> Clique no botão "+ Adicionar Coluna" para organizar melhor.~
+5- Exclua uma coluna → Se não precisar mais dela, clique no botão "❌" para removê-la.
 
-```bash
-ng build
-```
+**Como o projeto está organizado**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+>src/
+  >app/
+    >components/kanban
+       kanban.component.css             #Estilização
+       kanban.component.html            #Estrutua visual
+       kanban.component.ts              #Lógica principal
+    
+   app.component.html
+   app.component.ts
+   app.routes.ts
 
-## Running unit tests
+ index.html
+ main.ts
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
